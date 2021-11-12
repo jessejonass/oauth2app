@@ -7,7 +7,7 @@
 - Google OAuth2 API
 
 ### Screenshots
-<p align="center">
+<p>
   <img src="https://raw.githubusercontent.com/jessejonass/oauth2app/master/screenshots/screenshot-1.jpg" width="350" title="
   Screenshot 1">
   
