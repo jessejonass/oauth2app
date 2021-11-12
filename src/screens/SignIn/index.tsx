@@ -27,10 +27,13 @@ export function SignIn() {
 
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
-    const response = await AuthSession.startAsync({ authUrl });
-    console.log(response);
+    const { type, params } = (await AuthSession.startAsync({
+      authUrl,
+    })) as AuthResponse;
 
-    navigation.navigate("Profile");
+    if (type === "success") {
+      navigation.navigate("Profile", { token: params.access_token });
+    }
   }
 
   return (
