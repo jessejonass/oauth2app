@@ -6,6 +6,9 @@ import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../components/Button";
 import { SignInContent } from "../../components/SignInContent";
 
+const { CLIENT_ID } = process.env;
+const { REDIRECT_URI } = process.env;
+
 import { styles } from "./styles";
 
 type AuthResponse = {
@@ -19,9 +22,6 @@ export function SignIn() {
   const navigation = useNavigation();
 
   async function handleSignIn() {
-    const CLIENT_ID =
-      "930117110312-8rvhuho2m6lqcamhl7bqmho3htiu6j69.apps.googleusercontent.com";
-    const REDIRECT_URI = "https://auth.expo.io/@jessejonas/oauth2app";
     const RESPONSE_TYPE = "token";
     const SCOPE = encodeURI("profile email");
 
